@@ -42,6 +42,7 @@ public class Program
         var app = builder.Build();
         await InitializeDbAsync(app);
         app.UseMiddleware<CustomExceptionHadlerMiddleware>();
+        // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
         {
             app.UseSwagger();
